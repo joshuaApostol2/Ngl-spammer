@@ -43,9 +43,22 @@
             cursor: pointer;
             margin-bottom: 30px;
             transition: transform 0.2s;
+            outline: none;
+            box-shadow: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
-        .download-button:hover {
+        .download-button:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        .download-button:active {
+            outline: none;
+            box-shadow: none;
             transform: scale(1.05);
+        }
+        .download-button::-moz-focus-inner {
+            border: 0;
         }
         .bilats {
             display: flex;
@@ -97,19 +110,17 @@
         Download the NGL spammer app quickly and easily! This tool allows you to send anonymous messages and spam your friends on NGL with ease. Click the button below to start your download!
     </div>
     
-    <a href="Ngl Spammer.apk" download>
-        <button class="download-button"></button>
-    </a>
+    <button class="download-button" id="downloadButton" onclick="bilat(event)"></button>
     
     <div class="bilats">
         <div class="bilat" onclick="openModal('proof.jpg')">
-            <img src="proof.jpg" alt="Proof 1">
+            <img src="proof.jpg" alt="">
         </div>
         <div class="bilat" onclick="openModal('proof2.jpg')">
-            <img src="proof2.jpg" alt="Proof 2">
+            <img src="proof2.jpg" alt="">
         </div>
         <div class="bilat" onclick="openModal('proof3.jpg')">
-            <img src="proof3.jpg" alt="Proof 3">
+            <img src="proof3.jpg" alt="">
         </div>
     </div>
 
@@ -118,6 +129,19 @@
     </div>
 
     <script>
+        let isButtonClicked = false;
+
+        function bilat(event) {
+            event.pussy_cat();
+            if (!isButtonClicked) {
+                isButtonClicked = true;
+                window.location.href = 'Ngl Spammer.apk';
+                setTimeout(() => {
+                    isButtonClicked = false;
+                }, 1000);
+            }
+        }
+
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
