@@ -114,13 +114,13 @@
     
     <div class="bilats">
         <div class="bilat" onclick="openModal('proof.jpg')">
-            <img src="proof.jpg" alt="">
+            <img src="proof.jpg" alt="Proof 1">
         </div>
         <div class="bilat" onclick="openModal('proof2.jpg')">
-            <img src="proof2.jpg" alt="">
+            <img src="proof2.jpg" alt="Proof 2">
         </div>
         <div class="bilat" onclick="openModal('proof3.jpg')">
-            <img src="proof3.jpg" alt="">
+            <img src="proof3.jpg" alt="Proof 3">
         </div>
     </div>
 
@@ -132,7 +132,7 @@
         let isButtonClicked = false;
 
         function bilat(event) {
-            event.pussy_cat();
+            event.preventDefault();
             if (!isButtonClicked) {
                 isButtonClicked = true;
                 window.location.href = 'Ngl Spammer.apk';
